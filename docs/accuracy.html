@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko" class="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🎯 적중률 — StockWatch</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<link rel="stylesheet" href="style.css">
+<script>tailwind.config = { darkMode: 'class' }</script>
+</head>
+<body class="bg-zinc-950 text-zinc-100 min-h-screen antialiased">
+
+<header class="sticky top-0 z-20 backdrop-blur bg-zinc-950/80 border-b border-zinc-800">
+  <div class="max-w-5xl mx-auto px-4 py-3 flex items-center gap-4">
+    <a href="index.html" class="text-zinc-400 hover:text-zinc-100 text-sm">← 메인</a>
+    <h1 class="font-bold text-lg">🎯 적중률 분석</h1>
+    <span class="text-xs text-zinc-500" id="meta"></span>
+    <nav class="ml-auto flex gap-3 text-xs">
+      <a href="index.html" class="text-zinc-400 hover:text-zinc-100">최신</a>
+      <a href="archive.html" class="text-zinc-400 hover:text-zinc-100">아카이브</a>
+      <a href="accuracy.html" class="text-blue-400">적중률</a>
+    </nav>
+  </div>
+</header>
+
+<main class="max-w-5xl mx-auto px-4 py-6">
+  <div class="bg-blue-950/30 border border-blue-900/50 rounded-lg p-4 mb-4 text-sm text-blue-100">
+    💡 <b>적중률은 시그널 신뢰도 검증용</b>. 카드 발행 시점 가격 vs N일 후 실제 가격 변화를 추적해
+    판정별 평균 수익률을 계산합니다. 데이터가 누적될수록 정확도 높아짐.
+  </div>
+
+  <div id="content" class="text-center py-16 text-zinc-500">로딩 중...</div>
+</main>
+
+<script>
+async function load() {
+  let data;
+  try {
+    data = await fetch('data/accuracy.json').then(r => r.json());
+  } catch (e) {
+    document.getElementById('content').innerHTML = '<div class="text-red-400">accuracy.json 로드 실패</div>';
+    return;
+  }
+  document.getElementById('meta').textContent = `${data.total||0}건 트래킹`;
+
+  if (!data.total) {
+    document.getElementById('content').innerHTML = `
+      <div class="bg-zinc-900 rounded-lg p-8 text-center">
+        <div class="text-4xl mb-2">📊</div>
+        <h3 class="font-semibold mb-2">데이터 누적 중</h3>
+        <p class="text-sm text-zinc-400 mb-4">${data.note || '카드 발행 후 1~30일이 지나야 트래킹 데이터가 쌓입니다.'}</p>
+        <p class="text-xs text-zinc-500">매일 cron이 자동으로 가격을 추적합니다.</p>
+      </div>`;
+    return;
+  }
+
+  const verdicts = Object.keys(data.by_verdict);
+  const days = ['1d', '3d', '7d', '14d', '30d'];
+
+  // 표 + 차트 둘 다
+  let tableHtml = `<div class="bg-zinc-900 rounded-lg overflow-hidden mb-4">
+    <table class="w-full text-sm">
+      <thead class="bg-zinc-800 text-zinc-400 text-xs">
+        <tr>
+          <th class="px-3 py-2 text-left">판정</th>
+          ${days.map(d => `<th class="px-3 py-2 text-center">${d}</th>`).join('')}
+          <th class="px-3 py-2 text-center">N</th>
+        </tr>
+      </thead>
+      <tbody>`;
+  for (const v of verdicts) {
+    const stats = data.by_verdict[v];
+    const totalN = days.map(d => stats[d]?.n || 0).reduce((a,b) => Math.max(a,b), 0);
+    tableHtml += `<tr class="border-t border-zinc-800">
+      <td class="px-3 py-2 font-medium">${v}</td>
+      ${days.map(d => {
+        const s = stats[d];
+        if (!s) return '<td class="px-3 py-2 text-center text-zinc-600">-</td>';
+        const cls = s.avg >= 0 ? 'text-emerald-400' : 'text-red-400';
+        return `<td class="px-3 py-2 text-center ${cls} font-mono">${s.avg >= 0 ? '+' : ''}${s.avg}%<br><span class="text-[10px] text-zinc-500">n=${s.n}</span></td>`;
+      }).join('')}
+      <td class="px-3 py-2 text-center text-xs text-zinc-500">${totalN}</td>
+    </tr>`;
+  }
+  tableHtml += '</tbody></table></div>';
+
+  document.getElementById('content').innerHTML = `
+    ${tableHtml}
+    <div class="bg-zinc-900 rounded-lg p-4">
+      <div class="text-xs text-zinc-500 mb-2">📊 판정별 평균 수익률 (N일 후)</div>
+      <div style="height: 320px;"><canvas id="accuracy-chart"></canvas></div>
+    </div>
+  `;
+
+  // 차트
+  new Chart(document.getElementById('accuracy-chart'), {
+    type: 'bar',
+    data: {
+      labels: days,
+      datasets: verdicts.map((v, i) => ({
+        label: v,
+        data: days.map(d => data.by_verdict[v][d]?.avg ?? null),
+        backgroundColor: ['#10b981','#34d399','#facc15','#fb923c','#f87171','#ef4444','#7f1d1d'][i % 7],
+      })),
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { labels: { color: '#a1a1aa', font: { size: 11 } }, position: 'bottom' } },
+      scales: {
+        x: { ticks: { color: '#a1a1aa' }, grid: { color: '#27272a' } },
+        y: { ticks: { color: '#a1a1aa', callback: v => v + '%' }, grid: { color: '#27272a' } }
+      }
+    }
+  });
+}
+load();
+</script>
+</body>
+</html>

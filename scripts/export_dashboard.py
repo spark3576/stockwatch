@@ -192,6 +192,12 @@ def main(price_history_days: int = 365) -> None:
         )
         price_count += 1
 
+    # 5. 적중률 통계 (card_tracking 테이블 기반)
+    accuracy = _compute_accuracy(db)
+    (OUT_DIR / "accuracy.json").write_text(
+        json.dumps(accuracy, ensure_ascii=False, indent=2), encoding="utf-8",
+    )
+
     # 4. 매니페스트
     manifest = {
         "generated_at": datetime.now().isoformat(timespec="seconds"),
@@ -204,6 +210,48 @@ def main(price_history_days: int = 365) -> None:
     )
 
     print(f"✅ Export 완료: 카드 {len(cards_summary)}건, 가격 {price_count}건 → {OUT_DIR}")
+
+
+def _compute_accuracy(db) -> dict:
+    """card_tracking + analysis_cards 조인 → 판정별·시그널별 평균 수익률."""
+    with db._conn() as conn:
+        rows = conn.execute("""
+            SELECT ac.id, ac.signals_json, ac.triggers_json,
+                   ct.days_after, ct.return_pct
+            FROM analysis_cards ac
+            JOIN card_tracking ct ON ct.card_id = ac.id
+        """).fetchall()
+
+    if not rows:
+        return {"by_verdict": {}, "total": 0, "note": "트래킹 데이터 누적 중"}
+
+    # 판정별 N일 후 수익률 집계
+    by_verdict: dict[str, dict[str, list[float]]] = {}
+    for r in rows:
+        try:
+            td = json.loads(r[2] or "{}")
+            verdict = td.get("verdict") or "?"
+        except Exception:
+            verdict = "?"
+        days = r[3]
+        ret = r[4]
+        if verdict not in by_verdict:
+            by_verdict[verdict] = {}
+        key = f"{days}d"
+        by_verdict[verdict].setdefault(key, []).append(ret)
+
+    summary: dict[str, dict] = {}
+    for v, days_map in by_verdict.items():
+        summary[v] = {}
+        for d, returns in days_map.items():
+            summary[v][d] = {
+                "avg": round(sum(returns) / len(returns), 2),
+                "min": round(min(returns), 2),
+                "max": round(max(returns), 2),
+                "n": len(returns),
+            }
+
+    return {"by_verdict": summary, "total": len(rows)}
 
 
 def _verdict_emoji(verdict: str) -> str:
