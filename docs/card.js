@@ -46,6 +46,10 @@ function renderDetail(c) {
   );
 
   return `
+    <!-- 네비게이션 -->
+    <div class="flex justify-end mb-2">
+      <a href="stock.html?symbol=${encodeURIComponent(c.symbol)}&market=${c.market}" class="text-xs text-blue-400 hover:text-blue-300">📈 ${c.symbol} 시계열 보기 →</a>
+    </div>
     <!-- 메인 카드 -->
     <div class="bg-zinc-900 ${vClass} rounded-xl p-5 mb-4">
       <div class="flex items-start justify-between gap-3 mb-3">

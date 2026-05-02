@@ -119,6 +119,51 @@ def main(price_history_days: int = 365) -> None:
         json.dumps(cards_summary, ensure_ascii=False, indent=2), encoding="utf-8",
     )
 
+    # 4-2. 모든 카드 (전체 시계열용) — 종목당 최신 1건이 아닌 전체
+    all_cards: list[dict] = []
+    for r in rows:
+        sd = json.loads(r.get("signals_json") or "{}")
+        td = json.loads(r.get("triggers_json") or "{}")
+        symbol = r["symbol"]
+        market = r["market"]
+        issued = r.get("issued_at") or ""
+        issued_date = issued.split(" ")[0] if " " in issued else issued.split("T")[0]
+        scores = sd.get("scores", {})
+        verdict = td.get("verdict") or sd.get("verdict") or "?"
+        all_cards.append({
+            "id": r["id"],
+            "symbol": symbol,
+            "market": market,
+            "name": sd.get("name") or symbol,
+            "issued_at": issued,
+            "date": issued_date,
+            "issue_price": r.get("issue_price"),
+            "currency": sd.get("currency"),
+            "verdict": verdict,
+            "verdict_emoji": _verdict_emoji(verdict),
+            "risk_level": td.get("risk_level") or "?",
+            "risk_score": td.get("risk_score") or 0,
+            "scores": {
+                "up": scores.get("up", 0),
+                "down": scores.get("down", 0),
+                "neut": scores.get("neut", 0),
+            },
+            "summary": sd.get("summary") or "",
+            "signals_summary": [
+                {
+                    "type": s.get("signal_type"),
+                    "up": s.get("score_up", 0),
+                    "down": s.get("score_down", 0),
+                    "neut": s.get("score_neut", 0),
+                }
+                for s in (sd.get("signals") or [])
+            ],
+        })
+    all_cards.sort(key=lambda c: c["issued_at"], reverse=True)
+    (OUT_DIR / "cards_all.json").write_text(
+        json.dumps(all_cards, ensure_ascii=False), encoding="utf-8",
+    )
+
     # 3. 가격 시계열 (워치리스트 종목만, 최근 1년)
     watch = db.list_watchlist()
     price_count = 0

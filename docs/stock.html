@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko" class="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>📈 종목 시계열 — StockWatch</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script src="https://unpkg.com/lightweight-charts@4.1.3/dist/lightweight-charts.standalone.production.js"></script>
+<link rel="stylesheet" href="style.css">
+<script>tailwind.config = { darkMode: 'class' }</script>
+</head>
+<body class="bg-zinc-950 text-zinc-100 min-h-screen antialiased">
+
+<header class="sticky top-0 z-20 backdrop-blur bg-zinc-950/80 border-b border-zinc-800">
+  <div class="max-w-5xl mx-auto px-4 py-3 flex items-center gap-4">
+    <a href="index.html" class="text-zinc-400 hover:text-zinc-100 text-sm">← 메인</a>
+    <h1 class="font-bold text-lg" id="title">📈 종목 시계열</h1>
+    <nav class="ml-auto flex gap-3 text-xs">
+      <a href="index.html" class="text-zinc-400 hover:text-zinc-100">최신</a>
+      <a href="archive.html" class="text-zinc-400 hover:text-zinc-100">아카이브</a>
+    </nav>
+  </div>
+</header>
+
+<main class="max-w-5xl mx-auto px-4 py-4">
+  <div id="content" class="text-center py-16 text-zinc-500">로딩 중...</div>
+</main>
+
+<script src="app.js"></script>
+<script>
+async function load() {
+  const url = new URL(location.href);
+  const sym = url.searchParams.get('symbol');
+  const mkt = url.searchParams.get('market');
+  if (!sym) {
+    document.getElementById('content').innerHTML = '<div class="text-red-400">symbol 파라미터 필요</div>';
+    return;
+  }
+
+  const all = await fetch('data/cards_all.json').then(r => r.json());
+  const cards = all.filter(c => c.symbol === sym && (!mkt || c.market === mkt))
+                   .sort((a, b) => (a.issued_at||'').localeCompare(b.issued_at||''));
+
+  if (!cards.length) {
+    document.getElementById('content').innerHTML = `<div class="text-red-400">카드 없음: ${sym}</div>`;
+    return;
+  }
+
+  const last = cards[cards.length-1];
+  const flag = ({KR:'🇰🇷',US:'🇺🇸',JP:'🇯🇵',UK:'🇬🇧',DE:'🇩🇪'})[last.market]||'';
+  document.title = `${last.name} 시계열 — StockWatch`;
+  document.getElementById('title').textContent = `📈 ${last.name}`;
+
+  // 가격 데이터 (있으면)
+  let priceData = null;
+  try {
+    const pdata = await fetch(`data/prices/${last.symbol}_${last.market}.json`).then(r => r.json());
+    priceData = pdata.data;
+  } catch (e) { /* no prices */ }
+
+  document.getElementById('content').innerHTML = `
+    <div class="bg-zinc-900 rounded-lg p-4 mb-4">
+      <div class="text-xs text-zinc-500 mb-1">${flag} ${last.market} · ${last.symbol}</div>
+      <h2 class="text-2xl font-bold">${last.name}</h2>
+      <div class="text-sm text-zinc-400 mt-1">${cards.length}개 카드 · ${cards[0].date} ~ ${cards[cards.length-1].date}</div>
+    </div>
+
+    ${priceData ? `<div class="mb-4">
+      <div class="text-xs text-zinc-500 mb-1">📈 가격 + 카드 발행 시점</div>
+      <div id="price-chart" style="height: 300px;" class="bg-zinc-950 rounded"></div>
+    </div>` : ''}
+
+    <div class="mb-4">
+      <div class="text-xs text-zinc-500 mb-1">📊 시그널 점수 변화 (net = ↑ - ↓)</div>
+      <div class="bg-zinc-900 rounded-lg p-3" style="height: 280px;">
+        <canvas id="score-chart"></canvas>
+      </div>
+    </div>
+
+    <div class="mb-4">
+      <div class="text-xs text-zinc-500 mb-2">🗂️ 카드 시계열 (${cards.length}건)</div>
+      <div class="bg-zinc-900 rounded-lg overflow-hidden">
+        ${cards.slice().reverse().map((c, i) => {
+          const net = c.scores.up - c.scores.down;
+          const total = c.scores.up + c.scores.down + c.scores.neut || 1;
+          const upPct = c.scores.up/total*100, downPct = c.scores.down/total*100;
+          const time = (c.issued_at||'').split(' ')[1]?.slice(0,5) || '';
+          return `<a href="card.html?id=${c.id}" class="block px-3 py-2.5 ${i>0?'border-t border-zinc-800':''} hover:bg-zinc-800/50">
+            <div class="flex items-center gap-3">
+              <div class="text-xs text-zinc-500 w-28 shrink-0">${c.date} ${time}</div>
+              <div class="flex-1 flex items-center gap-2">
+                <div class="flex h-1.5 w-24 rounded-full overflow-hidden bg-zinc-800">
+                  <div class="bg-emerald-500" style="width:${upPct}%"></div>
+                  <div class="bg-red-500" style="width:${downPct}%"></div>
+                  <div class="bg-yellow-500" style="width:${100-upPct-downPct}%"></div>
+                </div>
+                <div class="font-mono text-xs">↑${c.scores.up} ↓${c.scores.down} △${c.scores.neut}</div>
+              </div>
+              <div class="font-mono text-xs w-16 text-right ${net>=0?'text-emerald-400':'text-red-400'}">${net>=0?'+':''}${net}</div>
+              <div class="text-xs ${badgeClass(c.verdict)} px-2 py-0.5 rounded w-20 text-center">${c.verdict_emoji}</div>
+            </div>
+          </a>`;
+        }).join('')}
+      </div>
+    </div>
+  `;
+
+  // 점수 변화 라인 차트
+  const labels = cards.map(c => `${c.date}\n${(c.issued_at||'').split(' ')[1]?.slice(0,5)||''}`);
+  const upData = cards.map(c => c.scores.up);
+  const downData = cards.map(c => -c.scores.down);
+  const netData = cards.map(c => c.scores.up - c.scores.down);
+
+  new Chart(document.getElementById('score-chart'), {
+    type: 'line',
+    data: {
+      labels: labels,
+      datasets: [
+        { label: '↑', data: upData, borderColor: '#10b981', backgroundColor: 'rgba(16,185,129,0.15)', tension: 0.3, fill: true },
+        { label: '↓', data: downData, borderColor: '#ef4444', backgroundColor: 'rgba(239,68,68,0.15)', tension: 0.3, fill: true },
+        { label: 'net', data: netData, borderColor: '#3b82f6', borderWidth: 2, tension: 0.3, borderDash: [4, 4] },
+      ]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: {
+        legend: { labels: { color: '#a1a1aa' } },
+        tooltip: { mode: 'index', intersect: false }
+      },
+      scales: {
+        x: { ticks: { color: '#71717a', font: { size: 10 } }, grid: { color: '#27272a' } },
+        y: { ticks: { color: '#71717a' }, grid: { color: '#27272a' } }
+      }
+    }
+  });
+
+  // 가격 + 카드 마커
+  if (priceData) {
+    const el = document.getElementById('price-chart');
+    const chart = LightweightCharts.createChart(el, {
+      layout: { background: { color: '#0a0a0a' }, textColor: '#a1a1aa' },
+      grid: { vertLines: { color: '#1f1f23' }, horzLines: { color: '#1f1f23' } },
+      width: el.clientWidth, height: 300,
+      timeScale: { borderColor: '#3f3f46', timeVisible: false },
+    });
+    const series = chart.addCandlestickSeries({
+      upColor:'#10b981', downColor:'#ef4444',
+      borderUpColor:'#10b981', borderDownColor:'#ef4444',
+      wickUpColor:'#10b981', wickDownColor:'#ef4444',
+    });
+    series.setData(priceData.map(p => ({time: p.time, open: p.open, high: p.high, low: p.low, close: p.close})));
+    // 카드 발행 시점에 마커
+    const markers = cards.map(c => {
+      const isUp = c.scores.up > c.scores.down;
+      return {
+        time: c.date,
+        position: isUp ? 'belowBar' : 'aboveBar',
+        color: isUp ? '#10b981' : '#ef4444',
+        shape: 'circle',
+        text: `${c.verdict_emoji}`,
+      };
+    });
+    series.setMarkers(markers);
+    chart.timeScale().fitContent();
+    window.addEventListener('resize', () => chart.applyOptions({ width: el.clientWidth }));
+  }
+}
+load();
+</script>
+</body>
+</html>
