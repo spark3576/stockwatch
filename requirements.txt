@@ -1,0 +1,32 @@
+# --- 데이터 수집 ---
+yfinance>=0.2.40          # 글로벌 주가 (US/JP/UK/DE/KR ADR)
+pykrx>=1.0.45             # 한국 KRX 데이터
+pandas>=2.2.0
+numpy>=1.26.0
+requests>=2.31.0
+
+# --- 기술적 지표 ---
+# ta-lib는 C 컴파일 필요. 먼저 ta(순수 파이썬)로 시작
+ta>=0.11.0                # RSI, MACD, MA 등 지표
+
+# --- DB ---
+sqlalchemy>=2.0.0
+
+# --- 텔레그램 ---
+python-telegram-bot>=21.0
+
+# --- CLI / 환경 ---
+click>=8.1.0              # CLI
+python-dotenv>=1.0.0      # .env 로드
+pyyaml>=6.0.1
+rich>=13.7.0              # 예쁜 터미널 출력
+loguru>=0.7.0             # 로깅
+
+# --- 스케줄러 (Phase 2) ---
+apscheduler>=3.10.0
+
+# --- 거래일/공휴일 ---
+exchange-calendars>=4.5.0
+
+# --- 개발 (선택) ---
+# pytest>=8.0.0

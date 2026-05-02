@@ -1,0 +1,531 @@
+{
+  "id": 32,
+  "symbol": "7203.T",
+  "market": "JP",
+  "name": "TOYOTA MOTOR CORP",
+  "issued_at": "2026-04-30 23:01:03",
+  "date": "2026-04-30",
+  "issue_price": 3023.0,
+  "currency": "JPY",
+  "verdict": "하락 우위",
+  "verdict_emoji": "🔴",
+  "risk_level": "보통",
+  "risk_score": 48,
+  "scores": {
+    "up": 8,
+    "down": 34,
+    "neut": 26
+  },
+  "summary": "🔴 다지표 약세 — 신규 진입 비추천",
+  "ai_summary": "",
+  "sector": "Consumer Cyclical",
+  "strengths": [
+    {
+      "name": "스토캐스틱",
+      "verdict": "↑",
+      "reason": "과매도 K6/D7",
+      "signal": "차트 시그널"
+    },
+    {
+      "name": "Forward PER",
+      "verdict": "↑",
+      "reason": "9.3 (저평가)",
+      "signal": "재무 분석"
+    },
+    {
+      "name": "Williams %R",
+      "verdict": "↑",
+      "reason": "과매도 -94",
+      "signal": "차트 시그널"
+    },
+    {
+      "name": "PSR",
+      "verdict": "↑",
+      "reason": "0.71 (매출 대비 저평가)",
+      "signal": "재무 분석"
+    },
+    {
+      "name": "ROE (자기자본수익률)",
+      "verdict": "↑",
+      "reason": "10.0% (양호)",
+      "signal": "재무 분석"
+    }
+  ],
+  "weaknesses": [
+    {
+      "name": "종가 vs 5일선",
+      "verdict": "↓",
+      "reason": "종가 3,023.00 (-1.8%) vs MA5 3,078.40",
+      "signal": "차트 시그널"
+    },
+    {
+      "name": "5/20 크로스",
+      "verdict": "↓",
+      "reason": "5일선이 20일선 하향 돌파 (단기 데드)",
+      "signal": "차트 패턴"
+    },
+    {
+      "name": "박스권 하단",
+      "verdict": "↓",
+      "reason": "20일 저점 3,057.00 이탈 (-1.1%)",
+      "signal": "돌파 차트"
+    },
+    {
+      "name": "OBV 5일 추세",
+      "verdict": "↓",
+      "reason": "-32.1% (단기 매도 누적)",
+      "signal": "머니플로우"
+    },
+    {
+      "name": "1M 수익률 vs 시장",
+      "verdict": "↓",
+      "reason": "-8.7% (시장 Nikkei 225 +17.3%, 차이 -26.0%p)",
+      "signal": "퀀트 팩터"
+    }
+  ],
+  "risk_factors": [
+    "MDD -22%",
+    "부채비율 105% (높음)",
+    "FCF 수익률 -4.4% (잉여현금 적자)",
+    "FCF -85% (현금흐름 급감)"
+  ],
+  "signals": [
+    {
+      "signal_type": "차트 시그널",
+      "score_up": 2,
+      "score_down": 13,
+      "score_neut": 3,
+      "summary": "강한 하락 신호",
+      "details": {
+        "close": 3023.0,
+        "rsi": 33.54,
+        "adx": 16.18,
+        "macd_hist": -25.4032,
+        "pct_b": 0.011,
+        "checks": [
+          {
+            "name": "종가 vs 5일선",
+            "verdict": "↓",
+            "reason": "종가 3,023.00 (-1.8%) vs MA5 3,078.40"
+          },
+          {
+            "name": "종가 vs 20일선",
+            "verdict": "↓",
+            "reason": "종가 3,023.00 (-7.1%) vs MA20 3,253.20"
+          },
+          {
+            "name": "종가 vs 60일선",
+            "verdict": "↓",
+            "reason": "종가 3,023.00 (-11.5%) vs MA60 3,417.58"
+          },
+          {
+            "name": "종가 vs 120일선",
+            "verdict": "↓",
+            "reason": "종가 3,023.00 (-9.2%) vs MA120 3,328.79"
+          },
+          {
+            "name": "단기 정배열(5>20)",
+            "verdict": "↓",
+            "reason": "역배열"
+          },
+          {
+            "name": "중기 정배열(20>60)",
+            "verdict": "↓",
+            "reason": "역배열"
+          },
+          {
+            "name": "MACD 위치",
+            "verdict": "↓",
+            "reason": "히스토그램 -25.40 (약세)"
+          },
+          {
+            "name": "MACD 모멘텀",
+            "verdict": "↓",
+            "reason": "감소 1.95→-25.40"
+          },
+          {
+            "name": "ADX 추세강도",
+            "verdict": "△",
+            "reason": "약한 추세 ADX 16"
+          },
+          {
+            "name": "RSI",
+            "verdict": "△",
+            "reason": "횡보 33.5"
+          },
+          {
+            "name": "볼린저 %B",
+            "verdict": "↓",
+            "reason": "하단권 0.01 (약세)"
+          },
+          {
+            "name": "스토캐스틱",
+            "verdict": "↑",
+            "reason": "과매도 K6/D7"
+          },
+          {
+            "name": "Williams %R",
+            "verdict": "↑",
+            "reason": "과매도 -94"
+          },
+          {
+            "name": "CCI",
+            "verdict": "↓",
+            "reason": "약세 -172 (<-100)"
+          },
+          {
+            "name": "MFI(자금흐름)",
+            "verdict": "↓",
+            "reason": "매도 우세 35"
+          },
+          {
+            "name": "일목 구름대",
+            "verdict": "↓",
+            "reason": "구름 아래 (하단 3,425.49)"
+          },
+          {
+            "name": "OBV 누적거래량",
+            "verdict": "↓",
+            "reason": "5일 -32.1% (매도 누적)"
+          },
+          {
+            "name": "거래량",
+            "verdict": "△",
+            "reason": "5일평균의 1.5x"
+          }
+        ]
+      }
+    },
+    {
+      "signal_type": "차트 패턴",
+      "score_up": 0,
+      "score_down": 2,
+      "score_neut": 6,
+      "summary": "약한 하락 패턴",
+      "details": {
+        "checks": [
+          {
+            "name": "망치/슈팅스타",
+            "verdict": "△",
+            "reason": "해당 없음"
+          },
+          {
+            "name": "도지",
+            "verdict": "△",
+            "reason": "해당 없음"
+          },
+          {
+            "name": "엔걸핑",
+            "verdict": "△",
+            "reason": "해당 없음"
+          },
+          {
+            "name": "모닝/이브닝 스타",
+            "verdict": "△",
+            "reason": "해당 없음"
+          },
+          {
+            "name": "5/20 크로스",
+            "verdict": "↓",
+            "reason": "5일선이 20일선 하향 돌파 (단기 데드)"
+          },
+          {
+            "name": "20/60 크로스",
+            "verdict": "△",
+            "reason": "교차 없음"
+          },
+          {
+            "name": "MACD 크로스",
+            "verdict": "↓",
+            "reason": "MACD가 시그널 하향 돌파 (5일내)"
+          },
+          {
+            "name": "RSI 다이버전스",
+            "verdict": "△",
+            "reason": "해당 없음"
+          }
+        ]
+      }
+    },
+    {
+      "signal_type": "돌파 차트",
+      "score_up": 0,
+      "score_down": 4,
+      "score_neut": 4,
+      "summary": "강한 이탈 신호",
+      "details": {
+        "checks": [
+          {
+            "name": "52주 신고가",
+            "verdict": "△",
+            "reason": "신고가까지 -22.2% — 멀리"
+          },
+          {
+            "name": "52주 신저가",
+            "verdict": "△",
+            "reason": "신저가에서 27.0% 위"
+          },
+          {
+            "name": "박스권 상단",
+            "verdict": "△",
+            "reason": "20일 고점 3,468.00까지 -12.8%"
+          },
+          {
+            "name": "박스권 하단",
+            "verdict": "↓",
+            "reason": "20일 저점 3,057.00 이탈 (-1.1%)"
+          },
+          {
+            "name": "200일선 이탈",
+            "verdict": "↓",
+            "reason": "200일선 3,106.85 하향 이탈"
+          },
+          {
+            "name": "갭상승",
+            "verdict": "△",
+            "reason": "해당 없음"
+          },
+          {
+            "name": "갭하락",
+            "verdict": "↓",
+            "reason": "전일 저가 3,079.00 → 오늘 시가 3,062.00"
+          },
+          {
+            "name": "거래량 폭발",
+            "verdict": "↓",
+            "reason": "3일평균 1.5x + 가격 -2.9% (매도 폭주)"
+          }
+        ]
+      }
+    },
+    {
+      "signal_type": "머니플로우",
+      "score_up": 0,
+      "score_down": 6,
+      "score_neut": 2,
+      "summary": "강한 자금 유출 (수급 악화)",
+      "details": {
+        "checks": [
+          {
+            "name": "OBV 5일 추세",
+            "verdict": "↓",
+            "reason": "-32.1% (단기 매도 누적)"
+          },
+          {
+            "name": "OBV 20일 추세",
+            "verdict": "↓",
+            "reason": "-40.0% (장기 분배세)"
+          },
+          {
+            "name": "MFI",
+            "verdict": "↓",
+            "reason": "35 (자금 유출 우세)"
+          },
+          {
+            "name": "A/D Line",
+            "verdict": "↓",
+            "reason": "-11.9% (분배 우세)"
+          },
+          {
+            "name": "VWAP(20일) vs 종가",
+            "verdict": "↓",
+            "reason": "종가가 VWAP 3,250.83 대비 -7.0% (단기 매물대 아래)"
+          },
+          {
+            "name": "매수일/매도일 거래량",
+            "verdict": "↓",
+            "reason": "0.40x (매도일 거래량 우세)"
+          },
+          {
+            "name": "거래대금 추세",
+            "verdict": "△",
+            "reason": "5일 평균 1.19x"
+          },
+          {
+            "name": "외인+기관 순매수",
+            "verdict": "△",
+            "reason": "JP 시장은 데이터 미지원"
+          }
+        ]
+      }
+    },
+    {
+      "signal_type": "퀀트 팩터",
+      "score_up": 0,
+      "score_down": 5,
+      "score_neut": 5,
+      "summary": "심한 부진 / 위험 누적",
+      "details": {
+        "checks": [
+          {
+            "name": "1M 수익률 vs 시장",
+            "verdict": "↓",
+            "reason": "-8.7% (시장 Nikkei 225 +17.3%, 차이 -26.0%p)"
+          },
+          {
+            "name": "3M 수익률 vs 시장",
+            "verdict": "↓",
+            "reason": "-12.4% (시장 Nikkei 225 +12.3%, 차이 -24.7%p)"
+          },
+          {
+            "name": "6M 수익률 vs 시장",
+            "verdict": "↓",
+            "reason": "-3.7% (시장 Nikkei 225 +16.8%, 차이 -20.5%p)"
+          },
+          {
+            "name": "12M 수익률 vs 시장",
+            "verdict": "↓",
+            "reason": "+16.6% (시장 Nikkei 225 +62.9%, 차이 -46.3%p)"
+          },
+          {
+            "name": "모멘텀 종합",
+            "verdict": "↓",
+            "reason": "가중수익률 +2.2% (시장 +34.4%, 차이 -32.2%p)"
+          },
+          {
+            "name": "베타",
+            "verdict": "△",
+            "reason": "0.80 시장 동조형"
+          },
+          {
+            "name": "연환산 변동성",
+            "verdict": "△",
+            "reason": "60일 35% (1년 평균 33%, 1.05x)"
+          },
+          {
+            "name": "샤프 비율",
+            "verdict": "△",
+            "reason": "0.81 (연수익 +27.4%, 변동성 33%, 무위험 0.5%)"
+          },
+          {
+            "name": "최대 낙폭(MDD)",
+            "verdict": "△",
+            "reason": "-22.2% (2026-04-30)"
+          },
+          {
+            "name": "VaR 95%",
+            "verdict": "△",
+            "reason": "하루 최악 5%일 -2.87%"
+          }
+        ]
+      }
+    },
+    {
+      "signal_type": "재무 분석",
+      "score_up": 6,
+      "score_down": 4,
+      "score_neut": 6,
+      "summary": "재무 중립",
+      "details": {
+        "checks": [
+          {
+            "name": "PER (TTM)",
+            "verdict": "△",
+            "reason": "10.6 (적정 범위)"
+          },
+          {
+            "name": "Forward PER",
+            "verdict": "↑",
+            "reason": "9.3 (저평가)"
+          },
+          {
+            "name": "PBR",
+            "verdict": "△",
+            "reason": "1.01 (적정)"
+          },
+          {
+            "name": "PSR",
+            "verdict": "↑",
+            "reason": "0.71 (매출 대비 저평가)"
+          },
+          {
+            "name": "EV/EBITDA",
+            "verdict": "△",
+            "reason": "10.6 (적정)"
+          },
+          {
+            "name": "ROE (자기자본수익률)",
+            "verdict": "↑",
+            "reason": "10.0% (양호)"
+          },
+          {
+            "name": "영업이익률",
+            "verdict": "△",
+            "reason": "8.9% (평균)"
+          },
+          {
+            "name": "부채비율 (D/E)",
+            "verdict": "↓",
+            "reason": "105% (높음)"
+          },
+          {
+            "name": "매출 성장 (YoY)",
+            "verdict": "↑",
+            "reason": "+8.6% (성장)"
+          },
+          {
+            "name": "EPS 성장 (YoY)",
+            "verdict": "↓",
+            "reason": "-42.7% (감소)"
+          },
+          {
+            "name": "매출 분기 트렌드",
+            "verdict": "↑",
+            "reason": "3분기 연속 증가 (+9.8% 누적)"
+          },
+          {
+            "name": "배당",
+            "verdict": "↑",
+            "reason": "수익률 3.14% (안정 배당), 배당성향 33%"
+          },
+          {
+            "name": "OCF 마진",
+            "verdict": "△",
+            "reason": "7.7% (평균)"
+          },
+          {
+            "name": "FCF 수익률",
+            "verdict": "↓",
+            "reason": "-4.4% (잉여현금 적자 — 자금 부담)"
+          },
+          {
+            "name": "OCF vs 순이익",
+            "verdict": "△",
+            "reason": "0.78배 (소폭 괴리)"
+          },
+          {
+            "name": "FCF 성장 (YoY)",
+            "verdict": "↓",
+            "reason": "-85.4% (큰 폭 감소)"
+          }
+        ],
+        "data_sources": [
+          "yf.info",
+          "yf.financials",
+          "yf.quarterly",
+          "yf.cashflow"
+        ],
+        "missing_count": 0,
+        "summary_metrics": {
+          "PER": 10.638372,
+          "PBR": 1.0109106,
+          "PSR": 0.7095137,
+          "ROE_%": 10.032,
+          "OPM_%": 8.851,
+          "D/E_%": 105.339,
+          "Rev_YoY_%": 8.600991276396485,
+          "EPS_YoY_%": -42.699999999999996,
+          "Div_yield_%": 3.1400000000000006,
+          "OCF": 3696934000000.0,
+          "FCF": -1560993000000.0,
+          "OCF_margin_%": 7.696060912089223,
+          "FCF_yield_%": -4.360862900609063,
+          "OCF_to_NI": 0.7758378337767671,
+          "FCF_growth_%": -85.38646898355266,
+          "MarketCap": 35795507347456.0,
+          "sector": "Consumer Cyclical"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>분석 카드 — StockWatch</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    tailwind.config = { darkMode: 'class' }
+  </script>
+</head>
+<body class="bg-zinc-950 text-zinc-100 min-h-screen antialiased">
+  <!-- Header -->
+  <header class="sticky top-0 z-20 backdrop-blur bg-zinc-950/80 border-b border-zinc-800">
+    <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="index.html" class="text-zinc-400 hover:text-zinc-100 text-sm flex items-center gap-1">
+        ← 목록으로
+      </a>
+      <div class="text-sm text-zinc-500" id="card-id"></div>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 py-6">
+    <div id="card-detail">
+      <div class="text-center py-16 text-zinc-500">로딩 중...</div>
+    </div>
+  </main>
+
+  <footer class="max-w-4xl mx-auto px-4 py-8 text-center text-xs text-zinc-600">
+    StockWatch · 정보 제공 목적 · 투자 권유 아님
+  </footer>
+
+  <script src="app.js"></script>
+  <script src="card.js"></script>
+</body>
+</html>

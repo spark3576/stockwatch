@@ -1,0 +1,54 @@
+# StockWatch 설정
+
+# --- 시장 설정 ---
+markets:
+  KR:
+    enabled: true
+    timezone: Asia/Seoul
+    currency: KRW
+    suffix: ""              # 005930
+  US:
+    enabled: true
+    timezone: America/New_York
+    currency: USD
+    suffix: ""              # AAPL
+  JP:
+    enabled: true
+    timezone: Asia/Tokyo
+    currency: JPY
+    suffix: ".T"            # 7203.T
+  UK:
+    enabled: true
+    timezone: Europe/London
+    currency: GBP
+    suffix: ".L"            # BARC.L
+  DE:
+    enabled: true
+    timezone: Europe/Berlin
+    currency: EUR
+    suffix: ".DE"           # SAP.DE
+
+# --- 시그널 (Phase 1) ---
+signals:
+  chart_signal:
+    enabled: true
+    ma_periods: [5, 20, 60, 120]    # 이동평균선 기간
+    rsi_period: 14
+    rsi_overbought: 70
+    rsi_oversold: 30
+
+# --- 데이터 수집 ---
+data:
+  default_history_days: 365         # 기본 조회 기간 (일)
+  cache_minutes: 15                 # 가격 데이터 캐시 (분)
+
+# --- 리포트 (Phase 2) ---
+report:
+  daily_time: "08:30"               # 매일 아침 (KST)
+  daily_timezone: Asia/Seoul
+
+# --- AI 모델 (Phase 3+) ---
+ai_models:
+  deep_analysis: claude-opus-4-7    # 팩트 헌터, 종합 카드, Why 엔진
+  fast_summary: claude-sonnet-4-6   # 단순 요약
+  bulk_processing: claude-haiku-4-5 # 대량 처리

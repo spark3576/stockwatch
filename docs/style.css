@@ -1,0 +1,75 @@
+/* StockWatch 대시보드 커스텀 스타일 */
+
+/* 카드 hover 효과 */
+.stock-card {
+  transition: all 0.2s ease;
+}
+.stock-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.3);
+}
+
+/* 판정별 카드 좌측 색상 바 */
+.verdict-strong-up { border-left: 4px solid #10b981; }
+.verdict-up        { border-left: 4px solid #34d399; }
+.verdict-weak-up   { border-left: 4px solid #6ee7b7; }
+.verdict-mixed     { border-left: 4px solid #facc15; }
+.verdict-weak-down { border-left: 4px solid #fb923c; }
+.verdict-down      { border-left: 4px solid #f87171; }
+.verdict-strong-down { border-left: 4px solid #ef4444; }
+
+/* 판정 배지 색상 */
+.badge-strong-up   { background: #064e3b; color: #6ee7b7; }
+.badge-up          { background: #065f46; color: #a7f3d0; }
+.badge-weak-up     { background: #134e4a; color: #99f6e4; }
+.badge-mixed       { background: #422006; color: #fde68a; }
+.badge-weak-down   { background: #431407; color: #fed7aa; }
+.badge-down        { background: #7f1d1d; color: #fecaca; }
+.badge-strong-down { background: #7f1d1d; color: #fee2e2; }
+
+.badge-risk-low    { background: #064e3b; color: #6ee7b7; }
+.badge-risk-mid    { background: #422006; color: #fde68a; }
+.badge-risk-high   { background: #431407; color: #fed7aa; }
+.badge-risk-extreme { background: #7f1d1d; color: #fee2e2; }
+
+/* 시그널 검사 verdict 색상 */
+.verdict-up-text   { color: #34d399; }
+.verdict-down-text { color: #f87171; }
+.verdict-neut-text { color: #fbbf24; }
+
+/* 시그널 행 미니 바 */
+.score-bar {
+  display: inline-block;
+  height: 6px;
+  border-radius: 3px;
+  vertical-align: middle;
+}
+
+/* 아코디언 */
+details > summary {
+  list-style: none;
+  cursor: pointer;
+}
+details > summary::-webkit-details-marker { display: none; }
+details > summary::after {
+  content: ' ▸';
+  color: #71717a;
+  transition: transform 0.2s;
+  display: inline-block;
+}
+details[open] > summary::after {
+  transform: rotate(90deg);
+}
+
+/* 모바일 최적화 */
+@media (max-width: 640px) {
+  .stock-card {
+    font-size: 14px;
+  }
+}
+
+/* 스크롤바 (다크) */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #18181b; }
+::-webkit-scrollbar-thumb { background: #52525b; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #71717a; }

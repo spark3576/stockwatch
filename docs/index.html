@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>📊 StockWatch — AI 분석 대시보드</title>
+  <meta name="description" content="다국가 주식 6시그널 + AI 분석 대시보드. KR/US/JP/UK/DE.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['-apple-system', 'BlinkMacSystemFont', 'Pretendard', 'system-ui', 'sans-serif'],
+            mono: ['SFMono-Regular', 'Menlo', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-zinc-950 text-zinc-100 min-h-screen font-sans antialiased">
+  <!-- Header -->
+  <header class="sticky top-0 z-20 backdrop-blur bg-zinc-950/80 border-b border-zinc-800">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="text-2xl">📊</div>
+        <div>
+          <h1 class="font-bold text-lg leading-tight">StockWatch</h1>
+          <p class="text-xs text-zinc-400" id="meta-info">로딩 중...</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-2">
+        <button id="refresh-btn" class="text-zinc-400 hover:text-zinc-100 text-sm px-2 py-1">
+          🔄
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Filter Bar -->
+  <div class="max-w-7xl mx-auto px-4 py-3 border-b border-zinc-800">
+    <div class="flex flex-wrap gap-2 items-center">
+      <input id="search-input" type="text" placeholder="🔍 종목명/심볼 검색"
+             class="flex-1 min-w-[200px] bg-zinc-900 border border-zinc-700 rounded-lg px-3 py-2 text-sm placeholder-zinc-500 focus:outline-none focus:border-blue-500" />
+      <select id="market-filter" class="bg-zinc-900 border border-zinc-700 rounded-lg px-3 py-2 text-sm">
+        <option value="">🌍 모든 시장</option>
+        <option value="KR">🇰🇷 한국</option>
+        <option value="US">🇺🇸 미국</option>
+        <option value="JP">🇯🇵 일본</option>
+        <option value="UK">🇬🇧 영국</option>
+        <option value="DE">🇩🇪 독일</option>
+      </select>
+      <select id="verdict-filter" class="bg-zinc-900 border border-zinc-700 rounded-lg px-3 py-2 text-sm">
+        <option value="">⚖️ 모든 판정</option>
+        <option value="강한 상승">🟢🟢 강한 상승</option>
+        <option value="상승">🟢 상승 (모두)</option>
+        <option value="혼조">🟡 혼조</option>
+        <option value="하락">🔴 하락 (모두)</option>
+        <option value="강한 하락">🔴🔴 강한 하락</option>
+      </select>
+      <select id="sort-by" class="bg-zinc-900 border border-zinc-700 rounded-lg px-3 py-2 text-sm">
+        <option value="date">📅 최신순</option>
+        <option value="net">💪 강도순 (↑-↓)</option>
+        <option value="risk">⚠️ 리스크 낮은순</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Stats Bar -->
+  <div class="max-w-7xl mx-auto px-4 py-2 text-xs text-zinc-500" id="stats-bar"></div>
+
+  <!-- Card Grid -->
+  <main class="max-w-7xl mx-auto px-4 py-4">
+    <div id="card-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3">
+      <!-- 카드 동적 삽입 -->
+    </div>
+    <div id="empty-state" class="hidden text-center py-16 text-zinc-500">
+      <div class="text-4xl mb-2">🔍</div>
+      <p>조건에 맞는 카드가 없습니다.</p>
+    </div>
+  </main>
+
+  <footer class="max-w-7xl mx-auto px-4 py-8 text-center text-xs text-zinc-600">
+    StockWatch · 정보 제공 목적 · 투자 권유 아님
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

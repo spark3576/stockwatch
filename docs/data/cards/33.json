@@ -1,0 +1,525 @@
+{
+  "id": 33,
+  "symbol": "VOD.L",
+  "market": "UK",
+  "name": "VODAFONE GROUP PLC ORD USD0.20 ",
+  "issued_at": "2026-04-30 23:01:08",
+  "date": "2026-04-30",
+  "issue_price": 114.5,
+  "currency": "GBP",
+  "verdict": "약한 상승",
+  "verdict_emoji": "🟢",
+  "risk_level": "낮음",
+  "risk_score": 0,
+  "scores": {
+    "up": 20,
+    "down": 14,
+    "neut": 34
+  },
+  "summary": "🟡 혼조세 — 추가 시그널·뉴스 확인 필요",
+  "ai_summary": "",
+  "sector": "Communication Services",
+  "strengths": [
+    {
+      "name": "종가 vs 60일선",
+      "verdict": "↑",
+      "reason": "종가 114.50 (+1.3%) vs MA60 113.03",
+      "signal": "차트 시그널"
+    },
+    {
+      "name": "200일선 위치",
+      "verdict": "↑",
+      "reason": "200일선 위 + 200일선 상승",
+      "signal": "돌파 차트"
+    },
+    {
+      "name": "3M 수익률 vs 시장",
+      "verdict": "↑",
+      "reason": "+4.8% (시장 FTSE 100 -1.2%, 차이 +6.0%p)",
+      "signal": "퀀트 팩터"
+    },
+    {
+      "name": "Forward PER",
+      "verdict": "↑",
+      "reason": "12.9 (저평가)",
+      "signal": "재무 분석"
+    },
+    {
+      "name": "종가 vs 120일선",
+      "verdict": "↑",
+      "reason": "종가 114.50 (+8.9%) vs MA120 105.14",
+      "signal": "차트 시그널"
+    }
+  ],
+  "weaknesses": [
+    {
+      "name": "종가 vs 5일선",
+      "verdict": "↓",
+      "reason": "종가 114.50 (-0.8%) vs MA5 115.45",
+      "signal": "차트 시그널"
+    },
+    {
+      "name": "5/20 크로스",
+      "verdict": "↓",
+      "reason": "5일선이 20일선 하향 돌파 (단기 데드)",
+      "signal": "차트 패턴"
+    },
+    {
+      "name": "OBV 5일 추세",
+      "verdict": "↓",
+      "reason": "-3.2% (단기 매도 누적)",
+      "signal": "머니플로우"
+    },
+    {
+      "name": "ROE (자기자본수익률)",
+      "verdict": "↓",
+      "reason": "-6.6% (적자)",
+      "signal": "재무 분석"
+    },
+    {
+      "name": "종가 vs 20일선",
+      "verdict": "↓",
+      "reason": "종가 114.50 (-0.9%) vs MA20 115.55",
+      "signal": "차트 시그널"
+    }
+  ],
+  "risk_factors": [],
+  "signals": [
+    {
+      "signal_type": "차트 시그널",
+      "score_up": 4,
+      "score_down": 7,
+      "score_neut": 7,
+      "summary": "약한 하락",
+      "details": {
+        "close": 114.5,
+        "rsi": 50.88,
+        "adx": 11.85,
+        "macd_hist": -0.2926,
+        "pct_b": 0.316,
+        "checks": [
+          {
+            "name": "종가 vs 5일선",
+            "verdict": "↓",
+            "reason": "종가 114.50 (-0.8%) vs MA5 115.45"
+          },
+          {
+            "name": "종가 vs 20일선",
+            "verdict": "↓",
+            "reason": "종가 114.50 (-0.9%) vs MA20 115.55"
+          },
+          {
+            "name": "종가 vs 60일선",
+            "verdict": "↑",
+            "reason": "종가 114.50 (+1.3%) vs MA60 113.03"
+          },
+          {
+            "name": "종가 vs 120일선",
+            "verdict": "↑",
+            "reason": "종가 114.50 (+8.9%) vs MA120 105.14"
+          },
+          {
+            "name": "단기 정배열(5>20)",
+            "verdict": "↓",
+            "reason": "역배열"
+          },
+          {
+            "name": "중기 정배열(20>60)",
+            "verdict": "↑",
+            "reason": "정배열"
+          },
+          {
+            "name": "MACD 위치",
+            "verdict": "↓",
+            "reason": "히스토그램 -0.29 (약세)"
+          },
+          {
+            "name": "MACD 모멘텀",
+            "verdict": "△",
+            "reason": "정체"
+          },
+          {
+            "name": "ADX 추세강도",
+            "verdict": "△",
+            "reason": "약한 추세 ADX 12"
+          },
+          {
+            "name": "RSI",
+            "verdict": "△",
+            "reason": "횡보 50.9"
+          },
+          {
+            "name": "볼린저 %B",
+            "verdict": "△",
+            "reason": "중간 0.32"
+          },
+          {
+            "name": "스토캐스틱",
+            "verdict": "↓",
+            "reason": "K(32) < D(36) 데드"
+          },
+          {
+            "name": "Williams %R",
+            "verdict": "△",
+            "reason": "중립 -68"
+          },
+          {
+            "name": "CCI",
+            "verdict": "△",
+            "reason": "중립 -23"
+          },
+          {
+            "name": "MFI(자금흐름)",
+            "verdict": "↓",
+            "reason": "매도 우세 22"
+          },
+          {
+            "name": "일목 구름대",
+            "verdict": "↑",
+            "reason": "구름 위 (상단 110.67)"
+          },
+          {
+            "name": "OBV 누적거래량",
+            "verdict": "↓",
+            "reason": "5일 -3.2% (매도 누적)"
+          },
+          {
+            "name": "거래량",
+            "verdict": "△",
+            "reason": "5일평균의 0.7x"
+          }
+        ]
+      }
+    },
+    {
+      "signal_type": "차트 패턴",
+      "score_up": 0,
+      "score_down": 1,
+      "score_neut": 7,
+      "summary": "약한 하락 패턴",
+      "details": {
+        "checks": [
+          {
+            "name": "망치/슈팅스타",
+            "verdict": "△",
+            "reason": "해당 없음"
+          },
+          {
+            "name": "도지",
+            "verdict": "△",
+            "reason": "해당 없음"
+          },
+          {
+            "name": "엔걸핑",
+            "verdict": "△",
+            "reason": "해당 없음"
+          },
+          {
+            "name": "모닝/이브닝 스타",
+            "verdict": "△",
+            "reason": "해당 없음"
+          },
+          {
+            "name": "5/20 크로스",
+            "verdict": "↓",
+            "reason": "5일선이 20일선 하향 돌파 (단기 데드)"
+          },
+          {
+            "name": "20/60 크로스",
+            "verdict": "△",
+            "reason": "교차 없음"
+          },
+          {
+            "name": "MACD 크로스",
+            "verdict": "△",
+            "reason": "교차 없음"
+          },
+          {
+            "name": "RSI 다이버전스",
+            "verdict": "△",
+            "reason": "해당 없음"
+          }
+        ]
+      }
+    },
+    {
+      "signal_type": "돌파 차트",
+      "score_up": 1,
+      "score_down": 0,
+      "score_neut": 7,
+      "summary": "박스권 / 의미있는 돌파 없음",
+      "details": {
+        "checks": [
+          {
+            "name": "52주 신고가",
+            "verdict": "△",
+            "reason": "신고가까지 -3.0%"
+          },
+          {
+            "name": "52주 신저가",
+            "verdict": "△",
+            "reason": "신저가에서 67.6% 위"
+          },
+          {
+            "name": "박스권 상단",
+            "verdict": "△",
+            "reason": "20일 고점 119.55까지 -4.2%"
+          },
+          {
+            "name": "박스권 하단",
+            "verdict": "△",
+            "reason": "20일 저점에서 +4.2% 위 (안전)"
+          },
+          {
+            "name": "200일선 위치",
+            "verdict": "↑",
+            "reason": "200일선 위 + 200일선 상승"
+          },
+          {
+            "name": "갭상승",
+            "verdict": "△",
+            "reason": "해당 없음"
+          },
+          {
+            "name": "갭하락",
+            "verdict": "△",
+            "reason": "해당 없음"
+          },
+          {
+            "name": "거래량 폭발",
+            "verdict": "△",
+            "reason": "3일평균 0.7x"
+          }
+        ]
+      }
+    },
+    {
+      "signal_type": "머니플로우",
+      "score_up": 0,
+      "score_down": 3,
+      "score_neut": 5,
+      "summary": "자금 유출 우세",
+      "details": {
+        "checks": [
+          {
+            "name": "OBV 5일 추세",
+            "verdict": "↓",
+            "reason": "-3.2% (단기 매도 누적)"
+          },
+          {
+            "name": "OBV 20일 추세",
+            "verdict": "△",
+            "reason": "+1.3% (방향성 모호)"
+          },
+          {
+            "name": "MFI",
+            "verdict": "↓",
+            "reason": "22 (자금 유출 우세)"
+          },
+          {
+            "name": "A/D Line",
+            "verdict": "△",
+            "reason": "+0.5% (균형)"
+          },
+          {
+            "name": "VWAP(20일) vs 종가",
+            "verdict": "△",
+            "reason": "VWAP 115.66 대비 -1.0% (근접)"
+          },
+          {
+            "name": "매수일/매도일 거래량",
+            "verdict": "↓",
+            "reason": "0.11x (매도일 거래량 우세)"
+          },
+          {
+            "name": "거래대금 추세",
+            "verdict": "△",
+            "reason": "5일 평균 0.88x"
+          },
+          {
+            "name": "외인+기관 순매수",
+            "verdict": "△",
+            "reason": "UK 시장은 데이터 미지원"
+          }
+        ]
+      }
+    },
+    {
+      "signal_type": "퀀트 팩터",
+      "score_up": 7,
+      "score_down": 0,
+      "score_neut": 3,
+      "summary": "강한 알파 (시장 초과수익)",
+      "details": {
+        "checks": [
+          {
+            "name": "1M 수익률 vs 시장",
+            "verdict": "△",
+            "reason": "+1.7% (시장 FTSE 100 +0.8%, 차이 +0.8%p)"
+          },
+          {
+            "name": "3M 수익률 vs 시장",
+            "verdict": "↑",
+            "reason": "+4.8% (시장 FTSE 100 -1.2%, 차이 +6.0%p)"
+          },
+          {
+            "name": "6M 수익률 vs 시장",
+            "verdict": "↑",
+            "reason": "+31.8% (시장 FTSE 100 +4.5%, 차이 +27.3%p)"
+          },
+          {
+            "name": "12M 수익률 vs 시장",
+            "verdict": "↑",
+            "reason": "+58.1% (시장 FTSE 100 +17.4%, 차이 +40.7%p)"
+          },
+          {
+            "name": "모멘텀 종합",
+            "verdict": "↑",
+            "reason": "가중수익률 +33.9% (시장 +8.1%, 차이 +25.8%p)"
+          },
+          {
+            "name": "베타",
+            "verdict": "△",
+            "reason": "0.83 시장 동조형"
+          },
+          {
+            "name": "연환산 변동성",
+            "verdict": "△",
+            "reason": "60일 23% (1년 평균 23%, 1.00x)"
+          },
+          {
+            "name": "샤프 비율",
+            "verdict": "↑",
+            "reason": "1.90 (연수익 +47.3%, 변동성 23%, 무위험 4.0%) — 우수"
+          },
+          {
+            "name": "최대 낙폭(MDD)",
+            "verdict": "↑",
+            "reason": "-9.3% (2026-03-09) — 양호"
+          },
+          {
+            "name": "VaR 95%",
+            "verdict": "↑",
+            "reason": "하루 최악 5%일 -1.80% — 양호"
+          }
+        ]
+      }
+    },
+    {
+      "signal_type": "재무 분석",
+      "score_up": 8,
+      "score_down": 3,
+      "score_neut": 5,
+      "summary": "재무 양호",
+      "details": {
+        "checks": [
+          {
+            "name": "PER (TTM)",
+            "verdict": "△",
+            "reason": "데이터 없음 (적자 또는 미공개)"
+          },
+          {
+            "name": "Forward PER",
+            "verdict": "↑",
+            "reason": "12.9 (저평가)"
+          },
+          {
+            "name": "PBR",
+            "verdict": "↑",
+            "reason": "0.62 (청산가치 이하 — 저평가)"
+          },
+          {
+            "name": "PSR",
+            "verdict": "↑",
+            "reason": "0.70 (매출 대비 저평가)"
+          },
+          {
+            "name": "EV/EBITDA",
+            "verdict": "△",
+            "reason": "8.6 (적정)"
+          },
+          {
+            "name": "ROE (자기자본수익률)",
+            "verdict": "↓",
+            "reason": "-6.6% (적자)"
+          },
+          {
+            "name": "영업이익률",
+            "verdict": "↑",
+            "reason": "10.1% (양호)"
+          },
+          {
+            "name": "부채비율 (D/E)",
+            "verdict": "△",
+            "reason": "95% (보통)"
+          },
+          {
+            "name": "매출 성장 (YoY)",
+            "verdict": "↑",
+            "reason": "+7.3% (성장)"
+          },
+          {
+            "name": "EPS 성장 (YoY)",
+            "verdict": "↓",
+            "reason": "-22.1% (감소)"
+          },
+          {
+            "name": "매출 분기 트렌드",
+            "verdict": "△",
+            "reason": "분기 데이터 없음"
+          },
+          {
+            "name": "배당",
+            "verdict": "↑",
+            "reason": "수익률 3.41% (안정 배당), 배당성향 102%"
+          },
+          {
+            "name": "OCF 마진",
+            "verdict": "↑",
+            "reason": "41.1% (현금 창출력 우수)"
+          },
+          {
+            "name": "FCF 수익률",
+            "verdict": "↑",
+            "reason": "+32.1% (저평가 + 현금 창출 우수)"
+          },
+          {
+            "name": "OCF vs 순이익",
+            "verdict": "△",
+            "reason": "데이터 부족"
+          },
+          {
+            "name": "FCF 성장 (YoY)",
+            "verdict": "↓",
+            "reason": "-10.5% (감소)"
+          }
+        ],
+        "data_sources": [
+          "yf.info",
+          "yf.financials",
+          "yf.cashflow"
+        ],
+        "missing_count": 2,
+        "summary_metrics": {
+          "PER": null,
+          "PBR": 0.6225693,
+          "PSR": 0.69700086,
+          "ROE_%": -6.616,
+          "OPM_%": 10.097000000000001,
+          "D/E_%": 95.225,
+          "Rev_YoY_%": 7.3,
+          "EPS_YoY_%": -22.1,
+          "Div_yield_%": 3.4099999999999997,
+          "OCF": 15373000000.0,
+          "FCF": 8674000000.0,
+          "OCF_margin_%": 41.05159154026917,
+          "FCF_yield_%": 32.089806134561584,
+          "OCF_to_NI": null,
+          "FCF_growth_%": -10.549654532329585,
+          "MarketCap": 27030390784.0,
+          "sector": "Communication Services"
+        }
+      }
+    }
+  ]
+}
