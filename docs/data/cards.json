@@ -1,11 +1,11 @@
 [
   {
-    "id": 55,
+    "id": 61,
     "symbol": "SIE.DE",
     "market": "DE",
     "name": "SIEMENS AG                    N",
-    "issued_at": "2026-05-04 23:32:13",
-    "date": "2026-05-04",
+    "issued_at": "2026-05-05 23:32:59",
+    "date": "2026-05-05",
     "issue_price": 249.5500030517578,
     "currency": "EUR",
     "verdict": "상승 우위",
@@ -14,42 +14,42 @@
     "risk_score": 26,
     "scores": {
       "up": 31,
-      "down": 11,
-      "neut": 52
+      "down": 9,
+      "neut": 54
     },
     "summary": "🟢 상승 우위 — 추세 추종 매매 후보",
-    "ai_summary": "美 제조 투자·AI 인프라 호재이나 뉴스 부족",
+    "ai_summary": "美 인프라 투자·AI 자산관리 확장 호재 (뉴스 부족)",
     "sector": "Industrials"
   },
   {
-    "id": 54,
+    "id": 60,
     "symbol": "AAPL",
     "market": "US",
     "name": "Apple Inc.",
-    "issued_at": "2026-05-04 23:32:10",
-    "date": "2026-05-04",
-    "issue_price": 276.8299865722656,
+    "issued_at": "2026-05-05 23:32:56",
+    "date": "2026-05-05",
+    "issue_price": 284.17999267578125,
     "currency": "USD",
-    "verdict": "상승 우위",
-    "verdict_emoji": "🟢",
+    "verdict": "강한 상승",
+    "verdict_emoji": "🟢🟢",
     "risk_level": "낮음",
     "risk_score": 0,
     "scores": {
-      "up": 35,
-      "down": 14,
-      "neut": 45
+      "up": 47,
+      "down": 8,
+      "neut": 39
     },
-    "summary": "🟢 상승 우위 — 추세 추종 매매 후보",
-    "ai_summary": "AI M&A 검토·CEO 교체·메모리 비용 부담 혼재",
+    "summary": "🟢 돌파 임박 + 자금 유입 — 진입 시점 모니터링",
+    "ai_summary": "인텔 파운드리 협력설 + Siri 소송 합의로 혼조",
     "sector": "Technology"
   },
   {
-    "id": 53,
+    "id": 59,
     "symbol": "005930",
     "market": "KR",
     "name": "삼성전자",
-    "issued_at": "2026-05-04 23:32:07",
-    "date": "2026-05-04",
+    "issued_at": "2026-05-05 23:32:52",
+    "date": "2026-05-05",
     "issue_price": 232500.0,
     "currency": "KRW",
     "verdict": "강한 상승",
@@ -62,7 +62,7 @@
       "neut": 37
     },
     "summary": "🟢🟢 강한 강세 + 재무 우량 — 매수 후보 (관심 등록)",
-    "ai_summary": "AI 메모리 랠리 동반, SK하이닉스 대비 상대약세",
+    "ai_summary": "AI 칩 랠리 동조, 인텔-애플 보도가 메모리주 분위기 견인",
     "sector": "Technology"
   },
   {
