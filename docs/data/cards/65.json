@@ -1,124 +1,125 @@
 {
-  "id": 61,
-  "symbol": "SIE.DE",
-  "market": "DE",
-  "name": "SIEMENS AG                    N",
-  "issued_at": "2026-05-05 23:32:59",
-  "date": "2026-05-05",
-  "issue_price": 249.5500030517578,
-  "currency": "EUR",
-  "verdict": "상승 우위",
-  "verdict_emoji": "🟢",
-  "risk_level": "낮음",
-  "risk_score": 26,
+  "id": 65,
+  "symbol": "005930",
+  "market": "KR",
+  "name": "삼성전자",
+  "issued_at": "2026-05-06 23:32:07",
+  "date": "2026-05-06",
+  "issue_price": 266000.0,
+  "currency": "KRW",
+  "verdict": "강한 상승",
+  "verdict_emoji": "🟢🟢",
+  "risk_level": "보통",
+  "risk_score": 37,
   "scores": {
-    "up": 31,
-    "down": 9,
-    "neut": 54
+    "up": 53,
+    "down": 10,
+    "neut": 31
   },
-  "summary": "🟢 상승 우위 — 추세 추종 매매 후보",
-  "ai_summary": "美 인프라 투자·AI 자산관리 확장 호재 (뉴스 부족)",
-  "sector": "Industrials",
+  "summary": "🟢🟢 강한 강세 + 재무 우량 — 매수 후보 (관심 등록)",
+  "ai_summary": "AI 메모리 랠리 + $1조 시총 돌파, 뚜렷한 호재 우위",
+  "sector": "Technology",
   "strengths": [
     {
-      "name": "종가 vs 20일선",
+      "name": "종가 vs 5일선",
       "verdict": "↑",
-      "reason": "종가 249.55 (+4.7%) vs MA20 238.29",
+      "reason": "종가 266,000.00 (+14.0%) vs MA5 233,400.00",
       "signal": "차트 시그널"
-    },
-    {
-      "name": "20/60 크로스",
-      "verdict": "↑",
-      "reason": "중기 골든크로스 발생 (10일내)",
-      "signal": "차트 패턴"
     },
     {
       "name": "52주 신고가",
       "verdict": "↑",
-      "reason": "신고가까지 -2.6% — 돌파 임박",
+      "reason": "신고가 갱신 또는 근접 (+0.00%)",
       "signal": "돌파 차트"
     },
     {
-      "name": "OBV 20일 추세",
+      "name": "OBV 5일 추세",
       "verdict": "↑",
-      "reason": "+90.1% (장기 매집세)",
+      "reason": "+6.7% (단기 매수 누적)",
       "signal": "머니플로우"
     },
     {
       "name": "1M 수익률 vs 시장",
       "verdict": "↑",
-      "reason": "+15.9% (시장 DAX +3.0%, 차이 +12.9%p)",
+      "reason": "+37.8% (시장 KOSPI +29.0%, 차이 +8.7%p)",
       "signal": "퀀트 팩터"
+    },
+    {
+      "name": "Forward PER",
+      "verdict": "↑",
+      "reason": "6.5 (TTM 대비 개선 — 이익 성장 예상)",
+      "signal": "재무 분석"
     }
   ],
   "weaknesses": [
     {
-      "name": "종가 vs 5일선",
+      "name": "RSI",
       "verdict": "↓",
-      "reason": "종가 249.55 (-0.3%) vs MA5 250.37",
+      "reason": "과매수 75.5",
       "signal": "차트 시그널"
     },
     {
-      "name": "OBV 5일 추세",
+      "name": "MFI",
       "verdict": "↓",
-      "reason": "-8.7% (단기 매도 누적)",
+      "reason": "83 (자금 과유입 — 단기 조정 우려)",
       "signal": "머니플로우"
     },
     {
       "name": "연환산 변동성",
       "verdict": "↓",
-      "reason": "60일 42% (1년 평균 31%, 1.34x) — 위험 증가",
+      "reason": "60일 79% (1년 평균 51%, 1.54x) — 위험 증가",
       "signal": "퀀트 팩터"
     },
     {
-      "name": "EPS 성장 (YoY)",
+      "name": "PER (TTM)",
       "verdict": "↓",
-      "reason": "-45.2% (감소)",
+      "reason": "39.5 (고평가)",
       "signal": "재무 분석"
     },
     {
-      "name": "MACD 모멘텀",
+      "name": "EPS 컨센서스",
       "verdict": "↓",
-      "reason": "감소 2.22→1.26",
-      "signal": "차트 시그널"
+      "reason": "평균 8432.57 (범위 4076.09~10245.56, ±36.6% 큰 분산 — 불확실성)",
+      "signal": "이벤트 추적"
     }
   ],
   "risk_factors": [
-    "MDD -20%"
+    "변동성 79% (매우 높음)",
+    "MDD -23%"
   ],
   "signals": [
     {
       "signal_type": "차트 시그널",
-      "score_up": 9,
-      "score_down": 4,
-      "score_neut": 5,
-      "summary": "상승 우위",
+      "score_up": 13,
+      "score_down": 5,
+      "score_neut": 0,
+      "summary": "강한 상승 신호 (다지표 일치)",
       "details": {
-        "close": 249.5500030517578,
-        "rsi": 62.0,
-        "adx": 34.56,
-        "macd_hist": 1.2556,
-        "pct_b": 0.736,
+        "close": 266000.0,
+        "rsi": 75.47,
+        "adx": 27.98,
+        "macd_hist": 2920.1838,
+        "pct_b": 1.328,
         "checks": [
           {
             "name": "종가 vs 5일선",
-            "verdict": "↓",
-            "reason": "종가 249.55 (-0.3%) vs MA5 250.37"
+            "verdict": "↑",
+            "reason": "종가 266,000.00 (+14.0%) vs MA5 233,400.00"
           },
           {
             "name": "종가 vs 20일선",
             "verdict": "↑",
-            "reason": "종가 249.55 (+4.7%) vs MA20 238.29"
+            "reason": "종가 266,000.00 (+22.1%) vs MA20 217,775.00"
           },
           {
             "name": "종가 vs 60일선",
             "verdict": "↑",
-            "reason": "종가 249.55 (+7.4%) vs MA60 232.46"
+            "reason": "종가 266,000.00 (+35.4%) vs MA60 196,498.33"
           },
           {
             "name": "종가 vs 120일선",
             "verdict": "↑",
-            "reason": "종가 249.55 (+6.5%) vs MA120 234.42"
+            "reason": "종가 266,000.00 (+67.4%) vs MA120 158,888.33"
           },
           {
             "name": "단기 정배열(5>20)",
@@ -133,72 +134,72 @@
           {
             "name": "MACD 위치",
             "verdict": "↑",
-            "reason": "히스토그램 +1.26 (강세)"
+            "reason": "히스토그램 +2920.18 (강세)"
           },
           {
             "name": "MACD 모멘텀",
-            "verdict": "↓",
-            "reason": "감소 2.22→1.26"
+            "verdict": "↑",
+            "reason": "증가 1330.18→2920.18"
           },
           {
             "name": "ADX 추세강도",
             "verdict": "↑",
-            "reason": "강한 상승추세 ADX 35"
+            "reason": "강한 상승추세 ADX 28"
           },
           {
             "name": "RSI",
-            "verdict": "△",
-            "reason": "횡보 62.0"
+            "verdict": "↓",
+            "reason": "과매수 75.5"
           },
           {
             "name": "볼린저 %B",
-            "verdict": "△",
-            "reason": "중간 0.74"
+            "verdict": "↓",
+            "reason": "상단 돌파 1.33 (과열)"
           },
           {
             "name": "스토캐스틱",
             "verdict": "↓",
-            "reason": "K(73) < D(77) 데드"
+            "reason": "과매수 K93/D88"
           },
           {
             "name": "Williams %R",
-            "verdict": "△",
-            "reason": "중립 -27"
+            "verdict": "↓",
+            "reason": "과매수 -7"
           },
           {
             "name": "CCI",
-            "verdict": "△",
-            "reason": "중립 55"
+            "verdict": "↑",
+            "reason": "강세 163 (>+100)"
           },
           {
             "name": "MFI(자금흐름)",
-            "verdict": "↑",
-            "reason": "매수 우세 75"
+            "verdict": "↓",
+            "reason": "과매수 83"
           },
           {
             "name": "일목 구름대",
             "verdict": "↑",
-            "reason": "구름 위 (상단 234.00)"
+            "reason": "구름 위 (상단 192,825.00)"
           },
           {
             "name": "OBV 누적거래량",
-            "verdict": "↓",
-            "reason": "5일 -8.7% (매도 누적)"
+            "verdict": "↑",
+            "reason": "5일 +6.7% (매수 누적)"
           },
           {
             "name": "거래량",
-            "verdict": "△",
-            "reason": "5일평균의 1.2x"
+            "verdict": "↑",
+            "reason": "5일평균의 2.3x (급증)"
           }
         ]
       }
     },
     {
       "signal_type": "차트 패턴",
-      "score_up": 1,
+      "score_up": 0,
       "score_down": 0,
-      "score_neut": 7,
-      "summary": "약한 상승 패턴",
+      "score_neut": 8,
+      "summary": "특별한 패턴 없음",
       "details": {
         "checks": [
           {
@@ -209,7 +210,7 @@
           {
             "name": "도지",
             "verdict": "△",
-            "reason": "결정 보류 (방향성 불분명)"
+            "reason": "해당 없음"
           },
           {
             "name": "엔걸핑",
@@ -224,12 +225,12 @@
           {
             "name": "5/20 크로스",
             "verdict": "△",
-            "reason": "교차 없음 (MA5 250.37 / MA20 238.29)"
+            "reason": "교차 없음 (MA5 233,400.00 / MA20 217,775.00)"
           },
           {
             "name": "20/60 크로스",
-            "verdict": "↑",
-            "reason": "중기 골든크로스 발생 (10일내)"
+            "verdict": "△",
+            "reason": "교차 없음"
           },
           {
             "name": "MACD 크로스",
@@ -246,31 +247,31 @@
     },
     {
       "signal_type": "돌파 차트",
-      "score_up": 2,
+      "score_up": 5,
       "score_down": 0,
-      "score_neut": 6,
-      "summary": "약한 돌파 가능성",
+      "score_neut": 3,
+      "summary": "강한 돌파 신호",
       "details": {
         "checks": [
           {
             "name": "52주 신고가",
             "verdict": "↑",
-            "reason": "신고가까지 -2.6% — 돌파 임박"
+            "reason": "신고가 갱신 또는 근접 (+0.00%)"
           },
           {
             "name": "52주 신저가",
             "verdict": "△",
-            "reason": "신저가에서 22.6% 위"
+            "reason": "신저가에서 393.5% 위"
           },
           {
             "name": "박스권 상단",
-            "verdict": "△",
-            "reason": "20일 고점 256.15까지 -2.6%"
+            "verdict": "↑",
+            "reason": "20일 고점 232,500.00 돌파 (+14.4%)"
           },
           {
             "name": "박스권 하단",
             "verdict": "△",
-            "reason": "20일 저점에서 +20.2% 위 (안전)"
+            "reason": "20일 저점에서 +39.9% 위 (안전)"
           },
           {
             "name": "200일선 위치",
@@ -279,8 +280,8 @@
           },
           {
             "name": "갭상승",
-            "verdict": "△",
-            "reason": "해당 없음"
+            "verdict": "↑",
+            "reason": "전일 고가 232,500.00 → 오늘 시가 254,000.00"
           },
           {
             "name": "갭하락",
@@ -289,211 +290,211 @@
           },
           {
             "name": "거래량 폭발",
-            "verdict": "△",
-            "reason": "3일평균 1.3x"
+            "verdict": "↑",
+            "reason": "3일평균 2.1x + 가격 +14.4%"
           }
         ]
       }
     },
     {
       "signal_type": "머니플로우",
-      "score_up": 3,
-      "score_down": 3,
+      "score_up": 5,
+      "score_down": 1,
       "score_neut": 2,
-      "summary": "수급 중립 / 혼조",
+      "summary": "자금 유입 우세",
       "details": {
         "checks": [
           {
             "name": "OBV 5일 추세",
-            "verdict": "↓",
-            "reason": "-8.7% (단기 매도 누적)"
+            "verdict": "↑",
+            "reason": "+6.7% (단기 매수 누적)"
           },
           {
             "name": "OBV 20일 추세",
             "verdict": "↑",
-            "reason": "+90.1% (장기 매집세)"
+            "reason": "+18.2% (장기 매집세)"
           },
           {
             "name": "MFI",
-            "verdict": "↑",
-            "reason": "75 (자금 유입 우세)"
+            "verdict": "↓",
+            "reason": "83 (자금 과유입 — 단기 조정 우려)"
           },
           {
             "name": "A/D Line",
-            "verdict": "↓",
-            "reason": "-6.7% (분배 우세)"
+            "verdict": "↑",
+            "reason": "+39.7% (매집 우세)"
           },
           {
             "name": "VWAP(20일) vs 종가",
             "verdict": "↑",
-            "reason": "종가가 VWAP 237.68 대비 +5.0% (단기 매물대 위)"
+            "reason": "종가가 VWAP 219,802.25 대비 +21.0% (단기 매물대 위)"
           },
           {
             "name": "매수일/매도일 거래량",
-            "verdict": "↓",
-            "reason": "0.40x (매도일 거래량 우세)"
+            "verdict": "↑",
+            "reason": "4.80x (매수일 거래량 우세)"
           },
           {
             "name": "거래대금 추세",
             "verdict": "△",
-            "reason": "5일 평균 0.96x"
+            "reason": "5일 평균 1.26x"
           },
           {
             "name": "외인+기관 순매수",
             "verdict": "△",
-            "reason": "DE 시장은 데이터 미지원"
+            "reason": "pykrx 데이터 없음"
           }
         ]
       }
     },
     {
       "signal_type": "퀀트 팩터",
-      "score_up": 4,
+      "score_up": 6,
       "score_down": 1,
-      "score_neut": 5,
-      "summary": "양호한 위험조정 수익",
+      "score_neut": 3,
+      "summary": "강한 알파 (시장 초과수익)",
       "details": {
         "checks": [
           {
             "name": "1M 수익률 vs 시장",
             "verdict": "↑",
-            "reason": "+15.9% (시장 DAX +3.0%, 차이 +12.9%p)"
+            "reason": "+37.8% (시장 KOSPI +29.0%, 차이 +8.7%p)"
           },
           {
             "name": "3M 수익률 vs 시장",
             "verdict": "↑",
-            "reason": "+5.3% (시장 DAX -2.5%, 차이 +7.8%p)"
+            "reason": "+58.8% (시장 KOSPI +40.2%, 차이 +18.7%p)"
           },
           {
             "name": "6M 수익률 vs 시장",
-            "verdict": "△",
-            "reason": "+4.0% (시장 DAX -0.2%, 차이 +4.3%p)"
+            "verdict": "↑",
+            "reason": "+168.1% (시장 KOSPI +73.2%, 차이 +94.9%p)"
           },
           {
             "name": "12M 수익률 vs 시장",
             "verdict": "↑",
-            "reason": "+15.3% (시장 DAX -0.5%, 차이 +15.9%p)"
+            "reason": "+361.8% (시장 KOSPI +169.2%, 차이 +192.6%p)"
           },
           {
             "name": "모멘텀 종합",
             "verdict": "↑",
-            "reason": "가중수익률 +10.0% (시장 -0.5%, 차이 +10.5%p)"
+            "reason": "가중수익률 +210.7% (시장 +100.6%, 차이 +110.1%p)"
           },
           {
             "name": "베타",
             "verdict": "△",
-            "reason": "1.60 공격형 (시장보다 변동성 +60%)"
+            "reason": "1.25 시장 동조형"
           },
           {
             "name": "연환산 변동성",
             "verdict": "↓",
-            "reason": "60일 42% (1년 평균 31%, 1.34x) — 위험 증가"
+            "reason": "60일 79% (1년 평균 51%, 1.54x) — 위험 증가"
           },
           {
             "name": "샤프 비율",
-            "verdict": "△",
-            "reason": "0.66 (연수익 +23.7%, 변동성 31%, 무위험 3.0%)"
+            "verdict": "↑",
+            "reason": "3.27 (연수익 +170.2%, 변동성 51%, 무위험 3.5%) — 우수"
           },
           {
             "name": "최대 낙폭(MDD)",
             "verdict": "△",
-            "reason": "-20.5% (2026-03-20)"
+            "reason": "-23.3% (2026-03-31)"
           },
           {
             "name": "VaR 95%",
             "verdict": "△",
-            "reason": "하루 최악 5%일 -2.49%"
+            "reason": "하루 최악 5%일 -3.95%"
           }
         ]
       }
     },
     {
       "signal_type": "재무 분석",
-      "score_up": 8,
-      "score_down": 1,
-      "score_neut": 7,
-      "summary": "재무 양호",
+      "score_up": 10,
+      "score_down": 2,
+      "score_neut": 4,
+      "summary": "재무 우량 (저평가+성장+수익성+현금)",
       "details": {
         "checks": [
           {
             "name": "PER (TTM)",
-            "verdict": "△",
-            "reason": "26.0 (다소 고평가)"
+            "verdict": "↓",
+            "reason": "39.5 (고평가)"
           },
           {
             "name": "Forward PER",
             "verdict": "↑",
-            "reason": "20.6 (TTM 대비 개선 — 이익 성장 예상)"
+            "reason": "6.5 (TTM 대비 개선 — 이익 성장 예상)"
           },
           {
             "name": "PBR",
-            "verdict": "△",
-            "reason": "3.10 (다소 고평가)"
+            "verdict": "↓",
+            "reason": "4.12 (고평가)"
           },
           {
             "name": "PSR",
             "verdict": "△",
-            "reason": "2.49 (적정)"
+            "reason": "4.50 (다소 고평가)"
           },
           {
             "name": "EV/EBITDA",
             "verdict": "△",
-            "reason": "20.9 (다소 고평가)"
+            "reason": "11.7 (적정)"
           },
           {
             "name": "ROE (자기자본수익률)",
             "verdict": "↑",
-            "reason": "12.8% (양호)"
+            "reason": "18.9% (양호)"
           },
           {
             "name": "영업이익률",
             "verdict": "↑",
-            "reason": "13.0% (양호)"
+            "reason": "42.7% (우수)"
           },
           {
             "name": "부채비율 (D/E)",
-            "verdict": "△",
-            "reason": "78% (보통)"
+            "verdict": "↑",
+            "reason": "6% (안전)"
           },
           {
             "name": "매출 성장 (YoY)",
-            "verdict": "△",
-            "reason": "+4.3% (정체)"
+            "verdict": "↑",
+            "reason": "+23.8% (고성장)"
           },
           {
             "name": "EPS 성장 (YoY)",
-            "verdict": "↓",
-            "reason": "-45.2% (감소)"
+            "verdict": "↑",
+            "reason": "+488.8% (고성장)"
           },
           {
             "name": "매출 분기 트렌드",
-            "verdict": "△",
-            "reason": "최근 둔화 (-5.2%)"
+            "verdict": "↑",
+            "reason": "3분기 연속 증가 (+25.8% 누적)"
           },
           {
             "name": "배당",
-            "verdict": "↑",
-            "reason": "수익률 2.14% (안정 배당), 배당성향 52%"
+            "verdict": "△",
+            "reason": "수익률 0.56% (소액 배당), 배당성향 25%"
           },
           {
             "name": "OCF 마진",
             "verdict": "↑",
-            "reason": "16.8% (양호)"
+            "reason": "25.6% (현금 창출력 우수)"
           },
           {
             "name": "FCF 수익률",
-            "verdict": "↑",
-            "reason": "+5.4% (양호)"
+            "verdict": "△",
+            "reason": "+1.9% (평균)"
           },
           {
             "name": "OCF vs 순이익",
             "verdict": "↑",
-            "reason": "1.38배 (회계이익보다 현금 더 — 진짜 이익)"
+            "reason": "1.93배 (회계이익보다 현금 더 — 진짜 이익)"
           },
           {
             "name": "FCF 성장 (YoY)",
             "verdict": "↑",
-            "reason": "+12.9% (성장)"
+            "reason": "+72.4% (현금 흐름 가속)"
           }
         ],
         "data_sources": [
@@ -504,53 +505,53 @@
         ],
         "missing_count": 0,
         "summary_metrics": {
-          "PER": 25.972084,
-          "PBR": 3.103481,
-          "PSR": 2.493032,
-          "ROE_%": 12.790000000000001,
-          "OPM_%": 13.031,
-          "D/E_%": 78.402,
-          "Rev_YoY_%": 4.282678581158383,
-          "EPS_YoY_%": -45.2,
-          "Div_yield_%": 2.14,
-          "OCF": 13257000000.0,
-          "FCF": 10812000000.0,
-          "OCF_margin_%": 16.799300504346505,
-          "FCF_yield_%": 5.4415154146504605,
-          "OCF_to_NI": 1.378066528066528,
-          "FCF_growth_%": 12.895478751174688,
-          "MarketCap": 198694649856.0,
-          "sector": "Industrials"
+          "PER": 39.46380842549682,
+          "PBR": 4.116548016661285,
+          "PSR": 4.497114,
+          "ROE_%": 18.854000000000003,
+          "OPM_%": 42.718,
+          "D/E_%": 5.782,
+          "Rev_YoY_%": 23.81516590648085,
+          "EPS_YoY_%": 488.8,
+          "Div_yield_%": 0.56,
+          "OCF": 85315148000000.0,
+          "FCF": 33161999000000.0,
+          "OCF_margin_%": 25.573629927414544,
+          "FCF_yield_%": 1.8985450969093556,
+          "OCF_to_NI": 1.9275486955139423,
+          "FCF_growth_%": 72.35086545998536,
+          "MarketCap": 1746705888313344.0,
+          "sector": "Technology"
         }
       }
     },
     {
       "signal_type": "이벤트 추적",
-      "score_up": 1,
-      "score_down": 0,
+      "score_up": 0,
+      "score_down": 1,
       "score_neut": 7,
       "summary": "이벤트 중립",
       "details": {
         "checks": [
           {
-            "name": "실적 발표 예정",
+            "name": "실적 발표 일정",
             "verdict": "△",
-            "reason": "D-8 (2026-05-14)"
+            "reason": "D-83 (2026-07-29) — 멀리"
           },
           {
             "name": "EPS 컨센서스",
-            "verdict": "△",
-            "reason": "평균 2.67 (범위 2.39~2.99, ±11.2% 분산)"
+            "verdict": "↓",
+            "reason": "평균 8432.57 (범위 4076.09~10245.56, ±36.6% 큰 분산 — 불확실성)"
           },
           {
             "name": "매출 컨센서스",
-            "verdict": "↑",
-            "reason": "평균 20.1B (±2.9% 합치)"
+            "verdict": "△",
+            "reason": "평균 155.8조 (±8.6% 분산)"
           },
           {
             "name": "배당 락일",
             "verdict": "△",
-            "reason": "82일 전 (2026-02-13)"
+            "reason": "38일 전 (2026-03-30)"
           },
           {
             "name": "배당 지급일",
@@ -560,12 +561,12 @@
           {
             "name": "FOMC",
             "verdict": "△",
-            "reason": "D-42 (2026-06-17)"
+            "reason": "D-41 (2026-06-17)"
           },
           {
             "name": "CPI 임박",
             "verdict": "△",
-            "reason": "D-7 (2026-05-13)"
+            "reason": "D-6 (2026-05-13)"
           },
           {
             "name": "종합 이벤트 위험",
@@ -573,144 +574,144 @@
             "reason": "7일 내 이벤트 가중 1 — 주의"
           }
         ],
-        "next_earnings": "2026-05-14",
+        "next_earnings": "2026-07-29",
         "next_fomc": "2026-06-17",
         "next_cpi": "2026-05-13"
       }
     },
     {
       "signal_type": "팩트헌터",
-      "score_up": 1,
+      "score_up": 5,
       "score_down": 0,
-      "score_neut": 5,
-      "summary": "美 인프라 투자·AI 자산관리 확장 호재 (뉴스 부족)",
+      "score_neut": 1,
+      "summary": "AI 메모리 랠리 + $1조 시총 돌파, 뚜렷한 호재 우위",
       "details": {
         "checks": [
           {
             "name": "호재 뉴스 강도",
-            "verdict": "△",
-            "reason": "$1B 美 제조 투자·NC 철도허브 호재이나 뉴스 2건뿐"
+            "verdict": "↑",
+            "reason": "삼성 시총 $1조 돌파·AI 메모리 14% 급등·반도체 섹터 사상최고 다수 보도"
           },
           {
             "name": "악재 뉴스 강도",
             "verdict": "△",
-            "reason": "직접적 악재 없음"
+            "reason": "중국 가전 일부 철수 보도 있으나 규모·임팩트 제한적"
           },
           {
             "name": "사실 검증",
             "verdict": "↑",
-            "reason": "Yahoo Finance·Simply Wall St 보도, 사실관계 정상"
+            "reason": "Reuters·WSJ·Bloomberg·GuruFocus 등 주류매체 일치"
           },
           {
             "name": "시장 반응 일치도",
-            "verdict": "△",
-            "reason": "5일 +2.7%로 약한 반영"
+            "verdict": "↑",
+            "reason": "5일 +18.5% 급등으로 호재가 가격에 즉각 반영됨"
           },
           {
             "name": "단기 전망 (1주)",
-            "verdict": "△",
-            "reason": "정보 부족, 시장 동조 중립"
+            "verdict": "↑",
+            "reason": "AI 칩 수요 모멘텀 지속, Apple-Samsung 칩 공급 논의 추가 호재"
           },
           {
             "name": "장기 전망 (1개월)",
-            "verdict": "△",
-            "reason": "美 인프라 수혜 가능하나 단기 모멘텀 약함"
+            "verdict": "↑",
+            "reason": "AI 메모리 슈퍼사이클 + 미국 칩 공급망 재편 수혜"
           }
         ],
-        "generated_at": "2026-05-05 23:32:28",
+        "generated_at": "2026-05-06 23:31:55",
         "ai_payload": {
-          "summary": "美 인프라 투자·AI 자산관리 확장 호재 (뉴스 부족)"
+          "summary": "AI 메모리 랠리 + $1조 시총 돌파, 뚜렷한 호재 우위"
         }
       }
     },
     {
       "signal_type": "Why 엔진",
-      "score_up": 1,
+      "score_up": 6,
       "score_down": 0,
-      "score_neut": 5,
-      "summary": "DAX 동반 약세, 시장 전체 조정",
+      "score_neut": 0,
+      "summary": "AI 메모리 슈퍼사이클·시총 1조弗 달성이 견인",
       "details": {
         "checks": [
           {
             "name": "변동 크기",
-            "verdict": "△",
-            "reason": "-1.19%는 유의미하나 시장 동조 수준"
+            "verdict": "↑",
+            "reason": "당일 +14.41% 매우 큰 변동"
           },
           {
             "name": "뉴스 원인",
-            "verdict": "△",
-            "reason": "당일 직접 악재 뉴스 없음"
+            "verdict": "↑",
+            "reason": "Samsung $1T 시총 돌파·AI 칩 랠리 직접 호재"
           },
           {
             "name": "시장 동조",
             "verdict": "↑",
-            "reason": "DAX -1.2%와 거의 동행"
+            "reason": "KOSPI +5.1%와 같은 방향, 큰 폭 상회"
           },
           {
             "name": "섹터 동조",
-            "verdict": "△",
-            "reason": "산업재 섹터 정보 부족"
+            "verdict": "↑",
+            "reason": "AMD +19% 등 글로벌 반도체 동조 랠리"
           },
           {
             "name": "거래량 동반",
-            "verdict": "△",
-            "reason": "5일 평균 1.23배 약간 상승"
+            "verdict": "↑",
+            "reason": "5일 평균 2.27배 거래량 동반"
           },
           {
             "name": "추세 일관성",
-            "verdict": "△",
-            "reason": "3일 -0.64% 약한 조정"
+            "verdict": "↑",
+            "reason": "3일 +17.7% 연속 상승, 강한 추세"
           }
         ],
-        "generated_at": "2026-05-05 23:32:28",
+        "generated_at": "2026-05-06 23:31:55",
         "ai_payload": {
-          "summary": "DAX 동반 약세, 시장 전체 조정",
-          "primary_cause": "market"
+          "summary": "AI 메모리 슈퍼사이클·시총 1조弗 달성이 견인",
+          "primary_cause": "news"
         }
       }
     },
     {
       "signal_type": "글로벌 팩트헌터",
-      "score_up": 1,
+      "score_up": 3,
       "score_down": 0,
-      "score_neut": 5,
-      "summary": "유럽 시장 약세, 산업재 모멘텀 미약",
+      "score_neut": 3,
+      "summary": "글로벌 AI 인프라 투자 가속, 한국 메모리주 직접수혜",
       "details": {
         "checks": [
           {
             "name": "글로벌 시장 트렌드",
-            "verdict": "△",
-            "reason": "美 신고가지만 유럽은 약세, 지역간 괴리"
+            "verdict": "↑",
+            "reason": "Nasdaq 사상최고·위험선호 분위기"
           },
           {
             "name": "섹터 강도",
-            "verdict": "△",
-            "reason": "산업재 섹터 단기 흐름 정보 부족"
+            "verdict": "↑",
+            "reason": "Tech·반도체 섹터 25일 최대 랠리"
           },
           {
             "name": "환율·금리 영향",
             "verdict": "△",
-            "reason": "유로·ECB 금리 영향 정보 부족"
+            "reason": "다음 CPI D-6, 변수 잠재"
           },
           {
             "name": "지정학 리스크",
             "verdict": "△",
-            "reason": "美-이란 휴전 유지, 유럽 직접 영향 제한"
+            "reason": "중동 긴장 완화 신호 vs 인도 정치 변수"
           },
           {
             "name": "매크로 이벤트 임박",
             "verdict": "△",
-            "reason": "임박한 매크로 이벤트 영향 제한"
+            "reason": "FOMC D-41, CPI D-6 임박"
           },
           {
             "name": "동종 글로벌 비교",
             "verdict": "↑",
-            "reason": "美 인프라 투자 등 글로벌 산업재 호재 존재"
+            "reason": "TSMC·Micron·SK하이닉스 동조 강세"
           }
         ],
-        "generated_at": "2026-05-05 23:32:28",
+        "generated_at": "2026-05-06 23:31:55",
         "ai_payload": {
-          "summary": "유럽 시장 약세, 산업재 모멘텀 미약"
+          "summary": "글로벌 AI 인프라 투자 가속, 한국 메모리주 직접수혜"
         }
       }
     }
